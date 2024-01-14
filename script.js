@@ -78,3 +78,22 @@ function displayGroup(elementId, group) {
         listElement.appendChild(listItem);
     });
 }
+
+function saveToCsv(filename) {
+    const aspGroup = document.getElementById("aspList").getElementsByTagName("li");
+    const phpGroup = document.getElementById("phpList").getElementsByTagName("li");
+
+    const aspGroupArray = Array.from(aspGroup).map(li => li.textContent);
+    const phpGroupArray = Array.from(phpGroup).map(li => li.textContent);
+
+    const csv = [
+        "ASP.NET Group,PHP Group",
+        aspGroupArray.map((value, index) => `${value},${phpGroupArray[index]}`).join("\n")
+    ].join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+}
