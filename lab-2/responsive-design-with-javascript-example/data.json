@@ -1,0 +1,18 @@
+{
+    "flight": {
+        "title": "The Flight",
+        "description": "The city can be divided in two parts, the old town and the modern city."
+    },
+    "city": {
+        "title": "The City",
+        "description": "Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city."
+    },
+    "island": {
+        "title": "The Island",
+        "description": "Crete is the largest island in Greece and the fifth largest island in the Mediterranean Sea. It is located in the southern part of the Aegean Sea separating the Aegean from the Libyan Sea."
+    },
+    "food": {
+        "title": "The Food",
+        "description": "The food is great, there are a lot of restaurants, where you can eat traditional cretan cuisine, such as \"staka\", \"mizithropita\", \"chochlioi boubouristi\" and drink \"raki\"."
+    }
+}
