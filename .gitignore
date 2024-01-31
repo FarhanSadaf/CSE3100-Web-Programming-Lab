@@ -1,0 +1,24 @@
+# ASP.NET WebForms
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore NuGet packages
+packages/
+
+# Ignore publish output
+_PublishedWebsites/
+*.publishproj
+
+# Ignore ReSharper files
+_ReSharper*/
+*.ReSharper*
+
+# Ignore IIS Express files
+*.iisexpresslog
