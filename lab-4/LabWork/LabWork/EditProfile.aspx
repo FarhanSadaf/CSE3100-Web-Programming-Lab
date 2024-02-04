@@ -26,7 +26,7 @@
     </asp:DropDownList>
     <br />
     <br />
-    Sex<br />
+    Gender<br />
     <asp:RadioButtonList ID="SexRadioButtonList" runat="server">
         <asp:ListItem>Male</asp:ListItem>
         <asp:ListItem>Female</asp:ListItem>

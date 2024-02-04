@@ -12,19 +12,12 @@
 </head>
 <body>
     <%--Navbar--%>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
-        </div>
-      </div>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="https://th.bing.com/th/id/R.ee2eaf5a60dd12419b4b8fd17f3e1d05?rik=%2bm3cufaeslU6kA&riu=http%3a%2f%2fwww.kuet.ac.bd%2flibs%2fimg%2flogo.png&ehk=WYDru2ccM8ga00x36zGWOh6Y97IezgjIOyaiqrDY8Vs%3d&risl=&pid=ImgRaw&r=0" width="40" height="40" class="d-inline-block align-top" alt="">
+          Web Programming Lab
+      </a>
     </nav>
 
     <form id="form1" runat="server">
