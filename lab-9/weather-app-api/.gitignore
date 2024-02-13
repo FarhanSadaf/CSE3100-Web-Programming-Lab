@@ -1,12 +1,3 @@
-# ASP.NET WebForms
-# Ignore Visual Studio files
-.vs/
-
-# Ignore build output
-bin/
-obj/
-
-# Laravel
 /.phpunit.cache
 /node_modules
 /public/build
