@@ -67,7 +67,12 @@ function fetchWeatherData(city='') {
                         }
                     })
                     .catch(error => {
-                        console.log('Error fetching weather data:', error);
+                        // Show the error 
+                        cityName.innerHTML = 'Error fetching weather data. Please try again later.';
+                        temperature.innerHTML = '';
+                        weatherDescription.innerHTML = '';
+                        humidity.innerHTML = '';
+                        windSpeed.innerHTML = '';
                     })
                     .finally(() => {
                         // End loading the progress bar
