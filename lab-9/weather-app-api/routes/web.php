@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\WeatherController;
 
-
+/*
 Route::get('/', function () {
     return view('weather');
 });
+*/
+
+// Or we can only return the view
+Route::view('/', 'weather');
 
 /*
 // Gettting the coordinates
