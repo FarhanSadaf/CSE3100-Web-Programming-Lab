@@ -10,8 +10,9 @@
 
     <div class="container">
         <h1>Get the Weather!</h1>
-        <form class="search-container" action="{{ route('weather') }}" method="GET">
-            <input type="text" id="cityInput" name="city" placeholder="Enter city name">
+        <form class="search-container" action="{{ route('weather') }}" method="POST">
+            @csrf
+            <input type="text" name="city" placeholder="Enter city name">
             <button type="submit" id="searchBtn">Search</button>
         </form>
         @if(isset($error))

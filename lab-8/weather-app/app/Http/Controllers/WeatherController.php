@@ -78,6 +78,7 @@ class WeatherController extends Controller
         }
 
     }
+    
     public function getCurrentCoordinates() 
     {
         try {
