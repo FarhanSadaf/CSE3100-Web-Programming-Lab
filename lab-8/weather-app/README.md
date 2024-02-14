@@ -13,8 +13,6 @@ In this lab, we will create basic a weather application.
 
 2. Open in Visual Studio Code and run the project.
 
-    `code .`
-
     `php artisan serve`
 
 3. Installing [Guzzle](https://github.com/guzzle/guzzle) (for client HTTP API)
@@ -33,24 +31,24 @@ In this lab, we will create basic a weather application.
 
     A new view file, `\resources\views\weather.blade.php` will be created.
 
-7. Design the `weather.blade.php` file using the [Blade Directives](https://laravel.com/docs/10.x/blade).
+    Design this file. In this project, we created `css` and `js` folders in `public` directory, put all the CSS and JS files there and linked them.
 
-    Make sure to use `@csrf` in your form, else you might get *Error 409: Page Expired*. [Why?](https://www.squash.io/how-to-fix-error-419-page-expired-in-laravel-post-request/#:~:text=When%20working%20with%20Laravel%2C%20you,against%20cross%2Dsite%20scripting%20attacks.)
-
-    In this project, we created `css` and `js` folders in `public` directory and put all the CSS and JS files there.
-
-8. Getting the weather
+7. Getting the weather
     1) Create a new controller by writing this command, `php artisan make:controller WeatherController`.
     2) Implemement `getCurrentCoordinates()` function on `WeatherContoller` to fetch the current co-ordinate information of the user using the [IP Geolocation API](https://ip-api.com/). 
-    3) Implemement `getWeather(Request $request)` function on `WeatherContoller` which will return the `weather.blade.php` view with weather data passed in a associative array. If the city is given in the request input (form POST in our implementation), then use the [OpenWeather API](https://openweathermap.org/current) to fetch the weather data. If the city is not given in the request input (form GET in our implementation), then call `getCurrentCoordinates()` functiom to get current latitude and longitude and call  the [OpenWeather API](https://openweathermap.org/current) to fetch the weather data.
+    3) Implemement `getWeather(Request $request)` function on `WeatherContoller` which will return the `weather.blade.php` view with weather data passed in an associative array. If the city is given in the request input (form POST in our implementation), then use the [OpenWeather API](https://openweathermap.org/current) to fetch the weather data. If the city is not given in the request input (form GET in our implementation), then call `getCurrentCoordinates()` function to get the current latitude and longitude and call  the [OpenWeather API](https://openweathermap.org/current) to fetch the weather data.
     4) Add the routes on `web.php` (GET and POST). 
+
+8. Use the [Blade Directives](https://laravel.com/docs/10.x/blade) on `weather.blade.php` file where necessary.
+
+    Make sure to use `@csrf` in your form, or else you might get *Error 409: Page Expired*. [Why?](https://www.squash.io/how-to-fix-error-419-page-expired-in-laravel-post-request/#:~:text=When%20working%20with%20Laravel%2C%20you,against%20cross%2Dsite%20scripting%20attacks.)
 
 
 ## Tasks
 1. Modify this project to serve the city search request using only the GET method (modify the `weather.blade.php` and `web.php`). There will be only a single GET route on `web.php`.
-2. Add another controller `WeatherAPIController` which will work similar to `WeatherController`. But instead of returning the view with data, `WeatherAPIController` will only return JSON response.
+2. Add another controller `WeatherAPIController` which will work similarly to `WeatherController`. But instead of returning the view with data, `WeatherAPIController` will only return JSON responses.
 
-    Add 2 GET route on `api.php`, `/weather` (will return the weather of current city) and `/weather/{city}` (will return the weather of the city passed in the route). 
+    Add 2 GET routes on `api.php`, `/weather` (will return the weather of the current city), and `/weather/{city}` (will return the weather of the city passed in the route). 
 
     Then, test these routes using [`Postman`](https://www.postman.com/). E.g. `http://127.0.0.1:8000/api/weather` and `http://127.0.0.1:8000/api/weather/california`.
 
