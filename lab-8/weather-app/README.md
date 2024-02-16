@@ -52,5 +52,31 @@ In this lab, we will create basic a weather application.
 
     Then, test these routes using [`Postman`](https://www.postman.com/). E.g. `http://127.0.0.1:8000/api/weather` and `http://127.0.0.1:8000/api/weather/california`.
 
+
+## Running the project
+1. Clone the project and change the directory
+```
+git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-8/weather-app
+
+cd lab-8/weather-app
+```
+2. Install the dependencies
+```
+composer install
+```
+3. Copy `.env.example` to `.env`
+```
+cp .env.example .env
+```
+4. Generate application key 
+```
+php artisan key:generate
+```
+5. Start the web server
+```
+php artisan serve
+```
+
+
 ## References
 1. https://github.com/rakibdevs/openweather-laravel-api/tree/master

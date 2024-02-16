@@ -60,6 +60,32 @@ In this lab, we will create basic a weather application using API calls which wi
 12. In the JS file, we used fetch API to call routes `/coordinates/{city}` and `/weather/{lat}/{lon}` and set the weather contents on the HTML file.
 
 
+
+## Running the project
+1. Clone the project and change the directory
+```
+git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-9/weather-app-api
+
+cd lab-9/weather-app-api
+```
+2. Install the dependencies
+```
+composer install
+```
+3. Copy `.env.example` to `.env`
+```
+cp .env.example .env
+```
+4. Generate application key 
+```
+php artisan key:generate
+```
+5. Start the web server
+```
+php artisan serve
+```
+
+
 ## Tasks
 1. Create a function `getCurrentWeather()` in `WeatherController` and add a route `\weather`, which will fetch the weather of client's current location without providing any latitude and longitude. Use `getCurrentCoordinates()` function from `PositionController` class to implement `getCurrentWeather()` function.
 2. Remove the `CountryMiddleware` from `\weather\lat\lon` route, and create another middleware called `ClientCountryMiddleware`, and implement the `handle` function so that the client can search for city weather of any country but only if the client is located in the specified country. E.g. adding `middleware('clientCountry:BD')` will allow the users from Bangladesh to look for the weather. Check if your middleware worked by changing your country using a VPN.
