@@ -6,20 +6,23 @@ In this lab, we will create basic a weather application using API calls which wi
 
 # Follow the following steps
 1. Create a new Laravel project.
+    ```
+    composer create-project laravel/laravel weather-app-api
 
-    `composer create-project laravel/laravel weather-app`
-
-    `cd example-app`
+    cd weather-app-api
+    ```
 
 2. Open in Visual Studio Code and run the project.
 
-    `code .`
+    ```
+   php artisan serve
+    ```
 
-    `php artisan serve`
+4. Installing [Guzzle](https://github.com/guzzle/guzzle) (for client HTTP API)
 
-3. Installing [Guzzle](https://github.com/guzzle/guzzle) (for client HTTP API)
-
-    `composer require guzzlehttp/guzzle`
+    ```
+   composer require guzzlehttp/guzzle
+    ```
 
     If you get any errors while running this command, try running `composer update` first and then the above command.
 
