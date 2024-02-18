@@ -78,7 +78,7 @@ iv. Cultivate proficiency in database management and design principles, includin
   <tr>
     <td rowspan="2">08</td>
     <td>Laravel Request-Response Model, REST API</td>
-    <td>Introduction to REST API<br>Request-Response with Postman<br>Different Types of Request-Response (Simple Request, Request with Parameter, Request with Header and Body, Form Data, File Upload, Redirect Response, etc.)	</td>
+    <td>Introduction to REST API<br>Request-Response with Postman<br>Different Types of Request-Response (Simple Request, Request with Parameter, Request with Header and Body, Form Data, File Upload, Redirect Response, etc.) <br> Ajax/ Fetch API	</td>
   </tr>
   <tr>
     <td>MVC Pattern, Laravel Controller, Session, Cookies</td>
