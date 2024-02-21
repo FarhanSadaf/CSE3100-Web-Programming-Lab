@@ -1,7 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 # Creating a Weather Application
-In this lab, we will create basic a weather application using API calls which will show the weather of only the specified country.
+In this lab, we will create basic a weather SPA (Single Page Application) using API calls which will show the weather of only the specified country.
 
 
 # Follow the following steps
