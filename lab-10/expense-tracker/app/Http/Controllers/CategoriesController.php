@@ -37,7 +37,7 @@ class CategoriesController extends Controller
         return response()->json(['id' => $id], 201);
     }
 
-    public function updateCategoryOfMonth(Request $request, $monthId, $categoryId)
+    public function updateCategory(Request $request, $categoryId)
     {
         // Validate the request data
         $request->validate([
@@ -46,8 +46,8 @@ class CategoriesController extends Controller
         ]);
 
         // Update the category in the database using Query Builder
-        // Similar SQL: UPDATE categories SET name = $name, budget = $budget WHERE id = $categoryId AND month_id = $monthId
-        $affected = DB::table('categories')->where('id', $categoryId)->where('month_id', $monthId)->update([
+        // Similar SQL: UPDATE categories SET name = $name, budget = $budget WHERE id = $categoryId
+        $affected = DB::table('categories')->where('id', $categoryId)->update([
             'name' => $request->name,
             'budget' => $request->budget
         ]);
@@ -61,11 +61,11 @@ class CategoriesController extends Controller
         return response()->json(['message' => 'Category updated successfully']);
     }
 
-    public function deleteCategoryOfMonth($monthId, $categoryId)
+    public function deleteCategory($categoryId)
     {
         // Delete the category from the database using Query Builder
-        // Similar SQL: DELETE FROM categories WHERE id = $categoryId AND month_id = $monthId
-        $deleted = DB::table('categories')->where('id', $categoryId)->where('month_id', $monthId)->delete();
+        // Similar SQL: DELETE FROM categories WHERE id = $categoryId
+        $deleted = DB::table('categories')->where('id', $categoryId)->delete();
 
         if ($deleted === 0) {
             // Return 404 response if no rows were deleted

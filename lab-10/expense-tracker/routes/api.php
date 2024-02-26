@@ -43,10 +43,10 @@ Route::group(['prefix' => 'monthly-expenses'], function () {
     Route::get('/user/{id}', [MonthlyExpensesController::class, 'getMonthlyExpensesByUser']);
     // Route to create a new monthly expense for a specific user
     Route::post('/user/{id}/create', [MonthlyExpensesController::class, 'createMonthlyExpenseOfUser']);
-    // Route to update a monthly expense for a specific user
-    Route::post('/user/{userId}/update/{monthlyExpenseId}', [MonthlyExpensesController::class, 'updateMonthlyExpenseOfUser']);
-    // Route to delete a monthly expense for a specific user
-    Route::delete('/user/{userId}/delete/{monthlyExpenseId}', [MonthlyExpensesController::class, 'deleteMonthlyExpenseOfUser']);
+    // Route to update a monthly expense 
+    Route::post('/update/{id}', [MonthlyExpensesController::class, 'updateMonthlyExpense']);
+    // Route to delete a monthly expense
+    Route::delete('/delete/{id}', [MonthlyExpensesController::class, 'deleteMonthlyExpense']);
 });
 
 // Define the API routes for the CategoriesController
@@ -55,10 +55,10 @@ Route::group(['prefix' => 'categories'], function () {
     Route::get('/month/{id}', [CategoriesController::class, 'getCategoriesByMonth']);
     // Route to create a new category for a specific month
     Route::post('/month/{id}/create', [CategoriesController::class, 'createCategoryOfMonth']);
-    // Route to update a category for a specific month
-    Route::post('/month/{monthId}/update/{categoryId}', [CategoriesController::class, 'updateCategoryOfMonth']);
-    // Route to delete a category for a specific month
-    Route::delete('/month/{monthId}/delete/{categoryId}', [CategoriesController::class, 'deleteCategoryOfMonth']);
+    // Route to update a category
+    Route::post('/update/{id}', [CategoriesController::class, 'updateCategory']);
+    // Route to delete a category
+    Route::delete('/delete/{id}', [CategoriesController::class, 'deleteCategory']);
 });
 
 // Define the API routes for the ExpensesController
@@ -67,4 +67,8 @@ Route::group(['prefix' => 'expenses'], function () {
     Route::post('/category/{id}/create', [ExpensesController::class, 'createExpenseOfCategory']);
     // Add a new route to get all expenses for a specific user
     Route::get('/user/{id}', [ExpensesController::class, 'getExpensesByUser']);
+    // Add a new route to update an expense
+    Route::post('/update/{id}', [ExpensesController::class, 'updateExpense']);
+    // Add a new route to delete an expense
+    Route::delete('/delete/{id}', [ExpensesController::class, 'deleteExpense']);
 });
