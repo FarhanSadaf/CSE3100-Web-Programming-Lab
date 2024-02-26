@@ -7,84 +7,30 @@ use Illuminate\Support\Facades\DB;
 
 class ExpensesController extends Controller
 {
-    public function show($id)
-    {
-        // Get a single expense from the database using Query Builder
-        // Similar SQL: SELECT * FROM expenses WHERE id = $id
-        $expense = DB::table('expenses')->where('id', $id)->first();
-
-        // Return the results as JSON
-        return response()->json($expense);
-    }
-
-    public function store(Request $request)
+    public function createExpenseOfCategory($categoryId, Request $request)
     {
         // Validate the request data
         $request->validate([
-            'amount' => 'required',
-            'expense_date' => 'required',
-            'payment_method' => 'required',
-            'category_id' => 'required'
+            'amount' => 'required|numeric',
+            'description' => 'nullable',
+            'expense_date' => 'required|date',
+            'location' => 'nullable',
+            'payment_method' => 'required'
         ]);
 
-        // Insert a new expense into the database using Query Builder
-        // Similar SQL: INSERT INTO expenses (amount, description, expense_date, location, payment_method, category_id) VALUES ($amount, $description, $expense_date, $location, $payment_method, $category_id)
+        // Create a new expense and get the ID
         $id = DB::table('expenses')->insertGetId([
-            'amount' => $request->amount,
-            'description' => $request->description,
-            'expense_date' => $request->expense_date,
-            'location' => $request->location,
-            'payment_method' => $request->payment_method,
-            'category_id' => $request->category_id
+            'amount' => $request->input('amount'),
+            'description' => $request->input('description'),
+            'expense_date' => $request->input('expense_date'),
+            'location' => $request->input('location'),
+            'payment_method' => $request->input('payment_method'),
+            'category_id' => $categoryId
         ]);
-
-        // Return the ID of the newly created expense, 201 status code for successful creation
+        
+        // Return the newly created expense ID as JSON
         return response()->json(['id' => $id], 201);
-    }
 
-    public function update(Request $request, $id)
-    {
-        // Validate the request data
-        $request->validate([
-            'amount' => 'required',
-            'expense_date' => 'required',
-            'payment_method' => 'required',
-            'category_id' => 'required'
-        ]);
-
-        // Update the expense in the database using Query Builder
-        // Similar SQL: UPDATE expenses SET amount = $amount, description = $description, expense_date = $expense_date, location = $location, payment_method = $payment_method, category_id = $category_id WHERE id = $id
-        $affected = DB::table('expenses')->where('id', $id)->update([
-            'amount' => $request->amount,
-            'description' => $request->description,
-            'expense_date' => $request->expense_date,
-            'location' => $request->location,
-            'payment_method' => $request->payment_method,
-            'category_id' => $request->category_id
-        ]);
-
-        if ($affected === 0) {
-            // Return 404 response if no rows were affected
-            return response()->json(['error' => 'Expense not found'], 404);
-        }
-
-        // Return 200 status code for successful update
-        return response()->json(['message' => 'Expense updated'], 200);
-    }
-
-    public function delete($id)
-    {
-        // Delete the expense from the database using Query Builder
-        // Similar SQL: DELETE FROM expenses WHERE id = $id
-        $deleted = DB::table('expenses')->where('id', $id)->delete();
-
-        if ($deleted === 0) {
-            // Return 404 response if no rows were deleted
-            return response()->json(['error' => 'Expense not found'], 404);
-        }
-
-        // Return 200 status code for successful deletion
-        return response()->json(['message' => 'Expense deleted'], 200);
     }
 
     public function getExpensesByUser($userId)

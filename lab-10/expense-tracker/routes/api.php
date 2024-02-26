@@ -25,40 +25,46 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Define the API routes for the UserController
 Route::group(['prefix' => 'users'], function () {
+    // Route to get all users
     Route::get('/', [UserController::class, 'index']);
+    // Route to get a single user
     Route::get('/{id}', [UserController::class, 'show']);
+    // Route to create a new user
     Route::post('/create', [UserController::class, 'store']);
+    // Route to update a user
     Route::post('/update/{id}', [UserController::class, 'update']);
+    // Route to delete a user
     Route::delete('delete/{id}', [UserController::class, 'delete']);
 });
 
 // Define the API routes for the MonthlyExpensesController
 Route::group(['prefix' => 'monthly-expenses'], function () {
-    Route::get('/{id}', [MonthlyExpensesController::class, 'show']);
-    Route::post('/create', [MonthlyExpensesController::class, 'store']);
-    Route::post('/update/{id}', [MonthlyExpensesController::class, 'update']);
-    Route::delete('delete/{id}', [MonthlyExpensesController::class, 'delete']);
-
-    // Add a new route to get all monthly expenses for a specific user
+    // Route to get all monthly expenses for a specific user
     Route::get('/user/{id}', [MonthlyExpensesController::class, 'getMonthlyExpensesByUser']);
+    // Route to create a new monthly expense for a specific user
+    Route::post('/user/{id}/create', [MonthlyExpensesController::class, 'createMonthlyExpenseOfUser']);
+    // Route to update a monthly expense for a specific user
+    Route::post('/user/{userId}/update/{monthlyExpenseId}', [MonthlyExpensesController::class, 'updateMonthlyExpenseOfUser']);
+    // Route to delete a monthly expense for a specific user
+    Route::delete('/user/{userId}/delete/{monthlyExpenseId}', [MonthlyExpensesController::class, 'deleteMonthlyExpenseOfUser']);
 });
 
 // Define the API routes for the CategoriesController
 Route::group(['prefix' => 'categories'], function () {
-    Route::get('/', [CategoriesController::class, 'index']);
-    Route::get('/{id}', [CategoriesController::class, 'show']);
-    Route::post('/create', [CategoriesController::class, 'store']);
-    Route::post('/update/{id}', [CategoriesController::class, 'update']);
-    Route::delete('delete/{id}', [CategoriesController::class, 'delete']);
+    // Route to get all categories for a specific month
+    Route::get('/month/{id}', [CategoriesController::class, 'getCategoriesByMonth']);
+    // Route to create a new category for a specific month
+    Route::post('/month/{id}/create', [CategoriesController::class, 'createCategoryOfMonth']);
+    // Route to update a category for a specific month
+    Route::post('/month/{monthId}/update/{categoryId}', [CategoriesController::class, 'updateCategoryOfMonth']);
+    // Route to delete a category for a specific month
+    Route::delete('/month/{monthId}/delete/{categoryId}', [CategoriesController::class, 'deleteCategoryOfMonth']);
 });
 
 // Define the API routes for the ExpensesController
 Route::group(['prefix' => 'expenses'], function () {
-    Route::get('/{id}', [ExpensesController::class, 'show']);
-    Route::post('/create', [ExpensesController::class, 'store']);
-    Route::post('/update/{id}', [ExpensesController::class, 'update']);
-    Route::delete('delete/{id}', [ExpensesController::class, 'delete']);
-
+    // Route to create a new expense for a specific category
+    Route::post('/category/{id}/create', [ExpensesController::class, 'createExpenseOfCategory']);
     // Add a new route to get all expenses for a specific user
     Route::get('/user/{id}', [ExpensesController::class, 'getExpensesByUser']);
 });

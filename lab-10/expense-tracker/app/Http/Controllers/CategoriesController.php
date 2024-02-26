@@ -7,52 +7,49 @@ use Illuminate\Support\Facades\DB;
 
 class CategoriesController extends Controller
 {
-    public function show($id)
+    public function getCategoriesByMonth($monthId)
     {
-        // Get a single category from the database using Query Builder
-        // Similar SQL: SELECT * FROM categories WHERE id = $id
-        $category = DB::table('categories')->where('id', $id)->first();
+        // Get all categories of a month from the database using Query Builder
+        // Similar SQL: SELECT * FROM categories WHERE month_id = $monthId
+        $categories = DB::table('categories')->where('month_id', $monthId)->get();
 
         // Return the results as JSON
-        return response()->json($category);
+        return response()->json($categories);
     }
 
-    public function store(Request $request)
+    public function createCategoryOfMonth(Request $request, $monthId)
     {
         // Validate the request data
         $request->validate([
             'name' => 'required',
-            'budget' => 'required',
-            'month_id' => 'required'
+            'budget' => 'required'
         ]);
 
         // Insert a new category into the database using Query Builder
-        // Similar SQL: INSERT INTO categories (name, budget, month_id) VALUES ($name, $budget, $month_id)
+        // Similar SQL: INSERT INTO categories (name, budget, month_id) VALUES ($name, $budget, $monthId)
         $id = DB::table('categories')->insertGetId([
             'name' => $request->name,
             'budget' => $request->budget,
-            'month_id' => $request->month_id
+            'month_id' => $monthId
         ]);
 
         // Return the ID of the newly created category, 201 status code for successful creation
         return response()->json(['id' => $id], 201);
     }
 
-    public function update(Request $request, $id)
+    public function updateCategoryOfMonth(Request $request, $monthId, $categoryId)
     {
         // Validate the request data
         $request->validate([
             'name' => 'required',
-            'budget' => 'required',
-            'month_id' => 'required'
+            'budget' => 'required'
         ]);
 
         // Update the category in the database using Query Builder
-        // Similar SQL: UPDATE categories SET name = $name, budget = $budget, month_id = $month_id WHERE id = $id
-        $affected = DB::table('categories')->where('id', $id)->update([
+        // Similar SQL: UPDATE categories SET name = $name, budget = $budget WHERE id = $categoryId AND month_id = $monthId
+        $affected = DB::table('categories')->where('id', $categoryId)->where('month_id', $monthId)->update([
             'name' => $request->name,
-            'budget' => $request->budget,
-            'month_id' => $request->month_id
+            'budget' => $request->budget
         ]);
 
         if ($affected === 0) {
@@ -64,11 +61,11 @@ class CategoriesController extends Controller
         return response()->json(['message' => 'Category updated successfully']);
     }
 
-    public function delete($id)
+    public function deleteCategoryOfMonth($monthId, $categoryId)
     {
         // Delete the category from the database using Query Builder
-        // Similar SQL: DELETE FROM categories WHERE id = $id
-        $deleted = DB::table('categories')->where('id', $id)->delete();
+        // Similar SQL: DELETE FROM categories WHERE id = $categoryId AND month_id = $monthId
+        $deleted = DB::table('categories')->where('id', $categoryId)->where('month_id', $monthId)->delete();
 
         if ($deleted === 0) {
             // Return 404 response if no rows were deleted
