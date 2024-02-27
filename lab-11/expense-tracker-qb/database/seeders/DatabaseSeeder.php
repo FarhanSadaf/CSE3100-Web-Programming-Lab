@@ -26,9 +26,9 @@ class DatabaseSeeder extends Seeder
 
             // For each user, insert 5 fake records into the monthly_expenses table
             $monthRecords = 5;
-            $startIndex = ($userId - 1) * $monthRecords;
-            $endIndex = $startIndex + $monthRecords;
-            for ($monthId = $startIndex; $monthId <= $endIndex; $monthId++) {
+            $startMonthId = ($userId - 1) * $monthRecords + 1;
+            $endMonthId = $startMonthId + $monthRecords;
+            for ($monthId = $startMonthId; $monthId < $endMonthId; $monthId++) {
                 $month = $faker->monthName;
                 $year = $faker->year;
                 DB::table('monthly_expenses')->insert([
@@ -40,9 +40,9 @@ class DatabaseSeeder extends Seeder
 
                 // For each monthly expense, insert 5 fake records into the categories table
                 $categoryRecords = 5;
-                $startIndex = ($monthId - 1) * $categoryRecords;
-                $endIndex = $startIndex + $categoryRecords;
-                for ($categoryId = $startIndex; $categoryId <= $endIndex; $categoryId++) {
+                $startCategoryId = ($monthId - 1) * $categoryRecords + 1;
+                $endCategoryId = $startCategoryId + $categoryRecords;
+                for ($categoryId = $startCategoryId; $categoryId < $endCategoryId; $categoryId++) {
                     $categories = ['Groceries', 'Entertainment', 'Transportation', 'Utilities', 'Healthcare', 'Insurance', 'Education', 'Savings', 'Debt', 'Personal Care', 'Miscellaneous'];
                     DB::table('categories')->insert([
                         // Category name e.g. 'Groceries', 'Entertainment', 'Transportation', etc. 
@@ -53,9 +53,9 @@ class DatabaseSeeder extends Seeder
 
                     // For each category, insert 5 fake records into the expenses table
                     $expenseRecords = 5;
-                    $startIndex = ($categoryId - 1) * $expenseRecords;
-                    $endIndex = $startIndex + $expenseRecords;
-                    for ($expenseId = $startIndex; $expenseId <= $endIndex; $expenseId++) {
+                    $startExpenseId = ($categoryId - 1) * $expenseRecords + 1;
+                    $endExpenseId = $startExpenseId + $expenseRecords;
+                    for ($expenseId = $startExpenseId; $expenseId < $endExpenseId; $expenseId++) {
                         DB::table('expenses')->insert([
                             'amount' => $faker->randomFloat(2, 10, 1000),
                             'description' => $faker->sentence,
