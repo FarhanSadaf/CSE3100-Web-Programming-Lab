@@ -97,7 +97,7 @@ iv. Cultivate proficiency in database management and design principles, includin
     <td>Retrieving Single Rows, All Rows<br>Select, Where Clauses</td>
   </tr>
   <tr>
-    <td>Eloquent ORM Essentials: Models, Operations, and Advanced Queries</td>
+    <td>Eloquent ORM Essentials: Models, Operations</td>
     <td>How Eloquent ORM Works<br>Model Naming Conventions<br>Insert, Update, Delete, Fillable Properties<br>Select Clause, Where Clause</td>
   </tr>
   <tr>
