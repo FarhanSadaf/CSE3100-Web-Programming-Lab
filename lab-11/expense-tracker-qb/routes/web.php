@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'expense.index')->name('expense.index');
+Route::view('/expenses', 'expense.index')->name('expense.index');

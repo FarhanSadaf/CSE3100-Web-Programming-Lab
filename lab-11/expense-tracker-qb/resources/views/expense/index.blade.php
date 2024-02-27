@@ -3,7 +3,15 @@
 @include('components.expense-list')
 
 <script>
-    let userId = 1; // Hardcoded user id for now
+    // userId from url GET request parameter
+    let urlParams = new URLSearchParams(window.location.search);
+    
+    if (!urlParams.has('userId')) {
+        alert('User ID is required. Redirecting to expenses page for user 1.');
+        window.location.href = '/expenses?userId=1';
+    }
+    
+    let userId = urlParams.get('userId');
 
     // Fetch expenses when the page loads
     fetchExpenses(userId);
@@ -13,7 +21,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                addExpensesToTable(data);
+                populateExpensesTable(data);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -21,7 +29,7 @@
     }
 
     // Function to set rows to the expense table
-    function addExpensesToTable(expenses) {
+    function populateExpensesTable(expenses) {
         const expenseTableBody = document.getElementById('expense-table-body');
 
         // Clear the table body first
@@ -61,7 +69,7 @@
             .then(data => {
                 console.log('Success:', data);
                 // Fetch expenses again to update the table
-                fetchExpenses(userId); // Hardcoded user id for now
+                fetchExpenses(userId); 
             })
             .catch((error) => {
                 console.error('Error:', error);

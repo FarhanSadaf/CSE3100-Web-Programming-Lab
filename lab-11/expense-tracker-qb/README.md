@@ -83,6 +83,7 @@ Users set a $300 monthly budget and can adjust category budgets based on their f
     ```
     php artisan migrate:fresh --seed
     ```
+9. Create necessary views for the project by adding routes to `web.php` of the view files. The implementation of expense record is provided in this project.
 
 ## Running the project
 1. Clone the project and change the directory
