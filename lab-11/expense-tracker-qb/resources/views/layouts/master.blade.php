@@ -34,6 +34,10 @@
         </div>
     </nav>
     
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
 
     <div class="container">
         @yield('content')

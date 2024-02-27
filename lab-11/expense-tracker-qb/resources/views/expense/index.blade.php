@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    @include('components.expense-list')
-@endsection
+@include('components.expense-list')
 
 <script>
     let userId = 1; // Hardcoded user id for now
@@ -24,7 +23,7 @@
     // Function to set rows to the expense table
     function addExpensesToTable(expenses) {
         const expenseTableBody = document.getElementById('expense-table-body');
-        
+
         // Clear the table body first
         expenseTableBody.innerHTML = '';
 
@@ -40,8 +39,8 @@
                 <td>${expense.payment_method}</td>
                 <td>${expense.category_name}</td>
                 <td>
-                    <button class="btn btn-primary">Update</button>
-                    <button class="btn btn-danger" onClick="deleteExpense(${expense.id})"">Delete</button>
+                    <button class="btn btn-block btn-primary">Update</button>
+                    <button class="btn btn-block btn-danger" onClick="deleteExpense(${expense.id})"">Delete</button>
                 </td>
             `;
             expenseTableBody.appendChild(row);
@@ -56,16 +55,17 @@
         }
 
         fetch(`/api/expenses/delete/${expenseId}`, {
-            method: 'DELETE',
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            // Fetch expenses again to update the table
-            fetchExpenses(userId);    // Hardcoded user id for now
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+                method: 'DELETE',
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Fetch expenses again to update the table
+                fetchExpenses(userId); // Hardcoded user id for now
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
 </script>
+@endsection

@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
                 'password' => $faker->password,
             ]);
 
-            // For each user, insert 5 fake records into the monthly_expenses table
-            $monthRecords = 5;
+            // For each user, insert 3 fake records into the monthly_expenses table
+            $monthRecords = 3;
             $startMonthId = ($userId - 1) * $monthRecords + 1;
             $endMonthId = $startMonthId + $monthRecords;
             for ($monthId = $startMonthId; $monthId < $endMonthId; $monthId++) {
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
                 ]);
 
                 // For each monthly expense, insert 5 fake records into the categories table
-                $categoryRecords = 5;
+                $categoryRecords = 4;
                 $startCategoryId = ($monthId - 1) * $categoryRecords + 1;
                 $endCategoryId = $startCategoryId + $categoryRecords;
                 for ($categoryId = $startCategoryId; $categoryId < $endCategoryId; $categoryId++) {
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
                     ]);
 
                     // For each category, insert 5 fake records into the expenses table
-                    $expenseRecords = 5;
+                    $expenseRecords = 3;
                     $startExpenseId = ($categoryId - 1) * $expenseRecords + 1;
                     $endExpenseId = $startExpenseId + $expenseRecords;
                     for ($expenseId = $startExpenseId; $expenseId < $endExpenseId; $expenseId++) {
