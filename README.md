@@ -63,8 +63,7 @@ iv. Cultivate proficiency in database management and design principles, includin
   </tr>
   <tr>
     <td>06</td>
-    <td>Lab Test, Assignment Showcase</td>
-    <td></td>
+    <td colspan="2">Lab Test, Assignment Showcase</td>
   </tr>
   <tr>
     <td rowspan="2">07</td>
@@ -76,37 +75,52 @@ iv. Cultivate proficiency in database management and design principles, includin
     <td>Blade Syntax (e.g. {{ }}, {!! !!}, Comments etc.)<br>Control Structures (If-else, For, For-each, For-else, While)<br>Template Inheritance (@extends and @yield, @section and @show)<br>Pass Data from Controller<br>Blade and JavaScript (@push and @stack)<br>Route and URL Helpers</td>
   </tr>
   <tr>
-    <td rowspan="2">08</td>
-    <td>Laravel Request-Response Model, REST API</td>
-    <td>Introduction to REST API<br>Request-Response with Postman<br>Different Types of Request-Response (Simple Request, Request with Parameter, Request with Header and Body, Form Data, File Upload, Redirect Response, etc.) <br> Ajax/ Fetch API	</td>
+    <td rowspan="3">08</td>
+    <td>MVC Pattern, Laravel Controller</td>
+    <td>Understanding MVC<br>Understanding Controller </td>
   </tr>
   <tr>
-    <td>MVC Pattern, Laravel Controller, Session, Cookies</td>
-    <td>Understanding MVC<br>Understanding Controller <br>Session and Cookies in Laravel</td>
-  </tr>
-  <tr>
-    <td>09</td>
     <td>Laravel Middleware</td>
-    <td>Understanding Middleware<br>Using Middleware (Request Verification, Request Redirect, Manipulate Request Header, Rate Limiting, etc.)</td>
+    <td>Understanding Middleware<br>Using Middleware (Request Redirect, Manipulate Request Header, etc.)</td>
   </tr>
   <tr>
-    <td rowspan="2">10</td>
+    <td>Routing, Session, Cookies</td>
+    <td>Router methods (Get, Post, Delete, etc.)<br>Form processing, CSRF protection<br>Session and Cookies in Laravel</td>
+  </tr>
+  <tr>
+    <td rowspan="3">09</td>
     <td>Laravel Migration and Database Designing</td>
-    <td>Introductions to Laravel Migrations, Creating Migrations<br>Database Schemas<br>Modifying Tables<br>Indexes and Foreign Keys<br>Seeding<br>Rollback and Refresh</td>
+    <td>Introductions to Laravel Migrations<br>Database Schemas<br>Modifying Tables<br>Indexes and Foreign Keys<br>Seeding<br>Rollback and Refresh</td>
   </tr>
   <tr>
     <td>Query Builder</td>
-    <td>Retrieving Single Rows, All Rows<br>Select, Where Clauses<br>Join Clauses </td>
+    <td>Retrieving Single Rows, All Rows<br>Select, Where Clauses</td>
+  </tr>
+  <tr>
+    <td>Eloquent ORM Essentials: Models, Operations, and Advanced Queries</td>
+    <td>How Eloquent ORM Works<br>Model Naming Conventions<br>Insert, Update, Delete, Fillable Properties<br>Select Clause, Where Clause</td>
+  </tr>
+  <tr>
+    <td rowspan="2">10</td>
+    <td>Laravel Request-Response Model, REST API</td>
+    <td>Introduction to REST API<br>Request-Response with Postman<br>Different Types of Request-Response (Simple Request, Request with Parameter, Request with Header and Body, Form Data, File Upload, Redirect Response, etc.)</td>
+  </tr>
+  <tr>
+    <td>Advanced Middleware, API Application</td>
+    <td>Using Middleware (Request Verification, Rate Limiting, etc.)<br>Ajax/ Fetch API with Examples	</td>
   </tr>
   <tr>
     <td>11</td>
-    <td>Eloquent ORM Essentials: Models, Operations, and Advanced Queries</td>
-    <td>How Eloquent ORM Works<br>Model Naming Conventions<br>Insert, Update, Delete, Fillable Properties<br>Retrieving Rows and Columns<br>Aggregation, Select Clause, Where Clause</td>
+    <td>Query Builder and Eloquent ORM Advanced </td>
+    <td>Aggregation, Join Clauses <br>Advanced Queries </td>
   </tr>
   <tr>
     <td>12</td>
-    <td>Final Project Showcase</td>
-    <td></td>
+    <td colspan="2">Final Project Showcase</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td colspan="2">Lab Quiz</td>
   </tr>
 </tbody>
 </table>
