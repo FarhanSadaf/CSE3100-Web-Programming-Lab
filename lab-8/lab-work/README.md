@@ -8,8 +8,8 @@ Routes:
 - VIEW `/task1/form1` -> GET `/task1/form/submitted`
 - VIEW `/task1/form2` -> POST `/task1/form/submitted`
 
-## Task 2: Solving the lab test problem with middlewares
-![Lab test problem](./public/Lab 7 (Lab Test)/Lab Test A.pdf)
+## Task 2: Solving the lab test problem with Middlewares
+![Lab test problem](.public/Lab%207%20(Lab%20Test)/Lab%20Test%20A.pdf)
 Routes:
 - GET `/task2` 
 - IF EMAIL IS SUBMITTED {
