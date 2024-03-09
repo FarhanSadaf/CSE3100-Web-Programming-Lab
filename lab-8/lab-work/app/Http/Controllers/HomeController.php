@@ -24,7 +24,7 @@ class HomeController extends Controller
             */
         }
 
-        return view('home');
+        return view('task2.home');
     }
 
     public function logout() 

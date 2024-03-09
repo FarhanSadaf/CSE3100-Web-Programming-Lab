@@ -12,7 +12,7 @@ class BankAccountController extends Controller
         $balance = session('balance', 0);
 
         // Return the view, passing the balance with it
-        return view('bank-account-form', ['balance' => $balance]);
+        return view('task2.bank-account-form', ['balance' => $balance]);
     }
 
     public function update(Request $request)
@@ -38,6 +38,6 @@ class BankAccountController extends Controller
         */
 
         // Redirect back to the form
-        return redirect('/bank-account');
+        return redirect(route('bank-account'));
     }
 }
