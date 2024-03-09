@@ -15,3 +15,9 @@ Routes:
     - GET `/task2/bank-account` -> POST `/task2/bank-account`
     - GET `/task2/logout` 
     }
+
+## Useful Links
+- https://fkrihnif.medium.com/understanding-the-mvc-architecture-in-laravel-a-comprehensive-guide-8f620cc139b6
+- https://tutorialdrive.org/laravel/laravel-request-life-cycle/
+- https://medium.com/@ankitatejani84/laravel-request-lifecycle-7c2145aa1257
+- https://blog.debugeverything.com/laravel-request-lifecycle/
