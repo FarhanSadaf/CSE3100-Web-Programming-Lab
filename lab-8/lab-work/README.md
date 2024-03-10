@@ -21,3 +21,5 @@ Routes:
 - https://tutorialdrive.org/laravel/laravel-request-life-cycle/
 - https://medium.com/@ankitatejani84/laravel-request-lifecycle-7c2145aa1257
 - https://blog.debugeverything.com/laravel-request-lifecycle/
+- https://www.imperva.com/learn/application-security/csrf-cross-site-request-forgery/
+- https://spanning.com/blog/cross-site-forgery-web-based-application-security-part-2/
