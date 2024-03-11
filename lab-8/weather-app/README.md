@@ -30,7 +30,7 @@ In this lab, we will create basic a weather application.
 
 7. Add your API key to `.env` file. E.g.
 
-    `OPENWEATHER_API_KEY="fdcc5af3e2fdb37742b4cf4008dffc6"`
+    `OPENWEATHER_API_KEY="fdcc5af3e2fdb37742b4cf41008dffc6"`
 
 8. Create a new view using the `php artisan make:view weather` command.
 
