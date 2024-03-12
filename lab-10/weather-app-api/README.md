@@ -4,7 +4,7 @@
 In this lab, we will create basic a weather SPA (Single Page Application) using API calls which will show the weather of only the specified country.
 
 
-# Follow the following steps
+# Follow the following steps if you're starting from scratch
 1. Create a new Laravel project.
     ```
     composer create-project laravel/laravel weather-app-api
@@ -64,7 +64,7 @@ In this lab, we will create basic a weather SPA (Single Page Application) using 
 
 
 
-## Running the project
+## Quickstart the project
 1. Clone the project and change the directory
 ```
 git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-9/weather-app-api
@@ -83,7 +83,11 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-5. Start the web server
+5. Add your [OpenWeather API key](https://home.openweathermap.org/api_keys) to `.env` file.
+```
+OPENWEATHER_API_KEY="Your OpenWeather API Key"
+```
+6. Start the web server
 ```
 php artisan serve
 ```

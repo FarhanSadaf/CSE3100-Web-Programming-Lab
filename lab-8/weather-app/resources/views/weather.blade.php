@@ -10,7 +10,7 @@
 
     <div class="container">
         <h1>Get the Weather!</h1>
-        <form class="search-container" action="{{ route('weather') }}" method="POST">
+        <form class="search-container" action="" method="POST">
             @csrf
             <input type="text" name="city" placeholder="Enter city name">
             <button type="submit" id="searchBtn">Search</button>

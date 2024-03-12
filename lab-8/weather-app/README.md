@@ -4,7 +4,7 @@
 In this lab, we will create basic a weather application.
 
 
-# Follow the following steps
+# Follow the following steps if you're starting from scratch
 1. Create a new Laravel project.
     ```
     composer create-project laravel/laravel weather-app
@@ -58,7 +58,7 @@ In this lab, we will create basic a weather application.
     Then, test these routes using [`Postman`](https://www.postman.com/). E.g. `http://127.0.0.1:8000/api/weather` and `http://127.0.0.1:8000/api/weather/california`.
 
 
-## Running the project
+## Quickstart the project
 1. Clone the project and change the directory
 ```
 git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-8/weather-app
@@ -77,7 +77,11 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-5. Start the web server
+5. Add your [OpenWeather API key](https://home.openweathermap.org/api_keys) to `.env` file.
+```
+OPENWEATHER_API_KEY="Your OpenWeather API Key"
+```
+6. Start the web server
 ```
 php artisan serve
 ```
