@@ -4,7 +4,7 @@
 In this lab, we will create basic a weather application.
 
 
-# Follow the following steps if you're starting from scratch
+## Follow the following steps if you're starting from scratch
 1. Create a new Laravel project.
     ```
     composer create-project laravel/laravel weather-app
