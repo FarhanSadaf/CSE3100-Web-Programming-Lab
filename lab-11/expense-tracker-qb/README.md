@@ -21,7 +21,7 @@ Users set a $300 monthly budget and can adjust category budgets based on their f
 ## ERD
 ![ERD](./public/images/erd.png)
 
-# Follow the following steps
+## Follow the following steps if you're starting from scratch
 1. Create a new Laravel project.
     ```
     composer create-project laravel/laravel expense-tracker
@@ -85,7 +85,7 @@ Users set a $300 monthly budget and can adjust category budgets based on their f
     ```
 9. Create necessary views for the project by adding routes to `web.php` of the view files. The implementation of expense record is provided in this project.
 
-## Running the project
+## Quickstart the project
 1. Clone the project and change the directory
 ```
 git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-10/expense-tracker
