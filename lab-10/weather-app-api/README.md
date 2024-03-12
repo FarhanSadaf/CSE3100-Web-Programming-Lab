@@ -4,7 +4,7 @@
 In this lab, we will create basic a weather SPA (Single Page Application) using API calls which will show the weather of only the specified country.
 
 
-# Follow the following steps if you're starting from scratch
+## Follow the following steps if you're starting from scratch
 1. Create a new Laravel project.
     ```
     composer create-project laravel/laravel weather-app-api
