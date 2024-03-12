@@ -46,7 +46,7 @@ In this lab, we will create basic a weather application.
 
 10. Use the [Blade Directives](https://laravel.com/docs/10.x/blade) on `weather.blade.php` file where necessary.
 
-    Make sure to use `@csrf` in your form, or else you might get *Error 409: Page Expired*. [Why?](https://www.squash.io/how-to-fix-error-419-page-expired-in-laravel-post-request/#:~:text=When%20working%20with%20Laravel%2C%20you,against%20cross%2Dsite%20scripting%20attacks.)
+    Make sure to use `@csrf` in your form, or else you might get *Error 419: Page Expired*. [Why?](https://www.squash.io/how-to-fix-error-419-page-expired-in-laravel-post-request/#:~:text=When%20working%20with%20Laravel%2C%20you,against%20cross%2Dsite%20scripting%20attacks.)
 
 
 ## Tasks
