@@ -23,3 +23,27 @@ Routes:
 - https://blog.debugeverything.com/laravel-request-lifecycle/
 - https://www.imperva.com/learn/application-security/csrf-cross-site-request-forgery/
 - https://spanning.com/blog/cross-site-forgery-web-based-application-security-part-2/
+
+## Quickstart the project
+1. Clone the project and change the directory
+```
+git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-8/weather-app
+
+cd lab-8/weather-app
+```
+2. Install the dependencies
+```
+composer install
+```
+3. Copy `.env.example` to `.env`
+```
+cp .env.example .env
+```
+4. Generate application key 
+```
+php artisan key:generate
+```
+5. Start the web server
+```
+php artisan serve
+```
