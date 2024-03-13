@@ -61,9 +61,9 @@ In this lab, we will create basic a weather application.
 ## Quickstart the project
 1. Clone the project and change the directory
 ```
-git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-8/lab-work
+git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-8/weather-app
 
-cd lab-8/lab-work
+cd lab-8/weather-app
 ```
 2. Install the dependencies
 ```
