@@ -46,7 +46,43 @@ Or if you want to refresh the database (drop all the tables then run migration a
 ```
 php artisan migrate:fresh --seed
 ```
-9. Finally, the CRUD operation is demonstrated in this project using Laravel Query Builder. You can find the routes in `web.php` file.
+9. The CRUD operation is demonstrated in this project using Eloquent ORM. You can find the routes in `web.php` file.
+
+10. Create models for `User`, `Profile`, `Post`, and `Tag`. N.b. delete pre-defined models before creating new ones.
+```
+php artisan make:model User
+php artisan make:model Profile
+php artisan make:model Post
+php artisan make:model Tag
+```
+Remember that, model names must be singular and table names should be in plural. For example,
+<table>
+<tr>
+<th> Table name </th>
+<th> Model name </th>
+</tr>
+<tr>
+<td> users </td>
+<td> User </td>
+</tr>
+<tr>
+<td> profiles </td>
+<td> Profile </td>
+</tr>
+<tr>
+<td> posts </td>
+<td> Post </td>
+</tr>
+<tr>
+<td> tags </td>
+<td> Tag </td>
+</tr>
+</table>
+
+And for the M:M relationship, the pivot table name should be in singular form, joined by underscore. E.g. `post_tag` for `Post` and `Tag` models.
+
+11. Add necessary 1:1 `hasOne() : belongsTo()`, 1:M `hasMany() : belongsTo()`, M:M `belongsToMany() : belongsToMany()` functions in the models to link the relations.
+
 
 ## Quickstart the project
 1. Clone the project and change the directory
@@ -73,6 +109,6 @@ php artisan serve
 ```
 
 ## References
-1. https://laravel.com/docs/10.x/queries
+1. https://laravel.com/docs/10.x/eloquent
 2. https://laravel.com/docs/10.x/migrations
 3. https://laravel.com/docs/10.x/seeding

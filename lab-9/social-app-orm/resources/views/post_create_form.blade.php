@@ -1,7 +1,6 @@
 <h2>{{ $user->name }}, create a post!</h2>
 
 
-
 <form action="{{ route('post.create', $user->id) }}" method="POST">
     @csrf
 

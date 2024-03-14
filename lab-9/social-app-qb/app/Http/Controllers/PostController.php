@@ -40,8 +40,7 @@ class PostController extends Controller
         if ($request->isMethod('get')) {
             return view('post_create_form', [
                 'user' => $user,
-                'tags' => $tags,
-                'success' => false 
+                'tags' => $tags
             ]);
         }
 
@@ -68,12 +67,8 @@ class PostController extends Controller
             ]);
         }
 
-        // Return post_create_from view with a success message
-        return view('post_create_form', [
-            'user' => $user,
-            'tags' => $tags,
-            'success' => false 
-        ]);
+        // Return post_list view
+        return redirect()->route('post.index', ['userId' => $userId]);
     }
 
     function update(Request $request, $userId, $postId) {
@@ -97,8 +92,7 @@ class PostController extends Controller
             return view('post_update_form', [
                 'user' => $user,
                 'tags' => $tags,
-                'post' => $post,
-                'success' => false 
+                'post' => $post
             ]);
         }
 
