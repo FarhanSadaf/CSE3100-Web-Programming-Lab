@@ -18,7 +18,7 @@
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=social_app_qb
+DB_DATABASE=social_app_orm
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -36,7 +36,7 @@ Then, add respective columns.
 ```
 php artisan migrate
 ```
-7. You can find the database in PHPMyAdmin panel (`social_app_qb` in this case). 
+7. You can find the database in PHPMyAdmin panel (`social_app_orm` in this case). 
 8. You can add some dummy data from the sql file provided in `public/insert_queries`. Or you can run the seeder, in which we have inserted some dummy data using Query Builder in `database/seeders/DatabaseSeeder.php` file.
 To run the seeder,
 ```
