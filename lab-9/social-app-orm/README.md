@@ -87,9 +87,9 @@ And for the M:M relationship, the pivot table name should be in singular form, j
 ## Quickstart the project
 1. Clone the project and change the directory
 ```
-git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-9/social-app-qb
+git clone https://github.com/FarhanSadaf/CSE3100-Web-Programming-Lab.git lab-9/social-app-orm
 
-cd lab-9/social-app-qb
+cd lab-9/social-app-orm
 ```
 2. Install the dependencies
 ```
