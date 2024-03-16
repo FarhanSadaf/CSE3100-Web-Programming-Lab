@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         // Insert into 'users' table using Query Builder
         DB::table('users')->insert([ 
             [ 'name' => 'John Doe', 'email' => 'john@example.com', 'password' => 'password123' ], 
-            [ 'name' => 'Alice Smith', 'email' => 'alice@example.com', 'password' => 'securepass' ], 
+            [ 'name' => 'Alice Smith', 'email' => 'alice@mail.com', 'password' => 'securepass' ], 
             [ 'name' => 'Bob Johnson', 'email' => 'bob@example.com', 'password' => 'test123' ]
         ]);
 

@@ -16,7 +16,7 @@ class PostControllerORM extends Controller
 
         // Get the posts of the user
         $posts = $user->posts;
-        
+
         // Return the view with the posts
         return view('orm.post_list', [
             'user' => $user,
@@ -56,13 +56,23 @@ class PostControllerORM extends Controller
         $post->user_id = $userId;
         $post->save();
 
+        /*
+        // Or if $fillable is defined in the Post model
+        $post = Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'user_id' => $userId
+        ]);
+        */
+
         // Attach the tags to the post
         $post->tags()->attach($request->tags);
+
 
         // Redirect to the post list
         return redirect()->route('orm.post.index', ['userId' => $userId]);
     }
-    
+
     function update(Request $request, $userId, $postId)
     {
         // Get the user with the given ID

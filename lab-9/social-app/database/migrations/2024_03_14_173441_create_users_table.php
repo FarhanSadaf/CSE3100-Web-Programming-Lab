@@ -14,7 +14,7 @@ return new class extends Migration
         /* Similar SQL
         CREATE TABLE users (
             id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(255) NOT NULL,
+            username VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL UNIQUE,
             password VARCHAR(255) NOT NULL
         );
@@ -22,7 +22,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             // Create columns 'id' (PK), 'name', 'email', 'password'
             $table->id();
-            $table->string('name');
+            $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
         });

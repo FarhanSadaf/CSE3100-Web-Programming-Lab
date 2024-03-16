@@ -13,12 +13,13 @@ return new class extends Migration
     {
         /* Similar SQL
         CREATE TABLE posts (
-            id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            user_id BIGINT UNSIGNED NOT NULL,
-            title VARCHAR(255) NOT NULL,
-            content TEXT NOT NULL,
-            created_at TIMESTAMP NOT NULL,
-            updated_at TIMESTAMP NOT NULL
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            title VARCHAR(255),
+            content TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
         );
         */
         Schema::create('posts', function (Blueprint $table) {
@@ -27,7 +28,10 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->text('content');
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable()->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+            // Similar to 
+            // $table->timestamps();
 
             // Create foreign key 'user_id' that references 'id' on 'users' table
             $table->foreign('user_id')->references('id')->on('users');

@@ -9,6 +9,9 @@ class Profile extends Model
 {
     use HasFactory;
 
+    // Timestamps are not used
+    public $timestamps = false;
+    
     // Define the 1:1 relationship between Profile and User
     public function user()
     {

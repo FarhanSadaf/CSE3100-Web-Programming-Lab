@@ -50,11 +50,18 @@ Or if you want to fresh the database with the seed,
 ```
 php artisan migrate:fresh --seed
 ```
-9. For the next stages, database CRUD operation is demonstrated in this project using both Query Builder and Eloquent ORM. You can find the routes in `web.php` file.
+9. For the next stages, database CRUD operations are demonstrated using both Query Builder and Eloquent ORM. You can find the routes in `web.php` file.
     
     ### Query Builder
-    
-    i. In the controller `PostControllerQB`, the CRUD operation was demonstrated using Query Builder. Associated routes are,
+    #### Task 1
+    a. In the controller `QBExerciseController`, the CRUD operation was demonstrated using Query Builder for the table `users`. Associated routes are,
+    - GET `/qb/user/` : To read all the users.
+    - GET `/qb/user/create` : To create a new user.
+    - GET `/qb/user/update/{id}` : To update a user with id.
+    - GET `/qb/user/delete/{id}` : To delete a user with id.
+
+    #### Task 2
+    b. In the controller `PostControllerQB`, the CRUD operation was demonstrated using Query Builder for the table `posts`. Associated routes are,
     - GET `/qb/post/{userId}/` : To read all the posts of the user with id (userId).
     - GET `/qb/post/{userId}/create` : To create a new post for the user with id (userId).
     - POST `/qb/post/{userId}/create` : To create a new post for the user with id (userId).
@@ -63,15 +70,7 @@ php artisan migrate:fresh --seed
     - GET `/qb/post/{userId}/delete/{postId}` : To delete a post with id (postId) for the user with id (userId).
 
     ### Eloquent ORM
-    i. In the controller `PostControllerORM`, the CRUD operation was demonstrated using Query Builder. Associated routes are,
-    - GET `/orm/post/{userId}/` : To read all the posts of the user with id (userId).
-    - GET `/orm/post/{userId}/create` : To create a new post for the user with id (userId).
-    - POST `/orm/post/{userId}/create` : To create a new post for the user with id (userId).
-    - GET `/orm/post/{userId}/update/{postId}` : To update a post with id (postId) for the user with id (userId).
-    - POST `/orm/post/{userId}/update/{postId}` : To update a post with id (postId) for the user with id (userId).
-    - GET `/orm/post/{userId}/delete/{postId}` : To delete a post with id (postId) for the user with id (userId).
-
-    ii. Create models for `User`, `Profile`, `Post`, and `Tag`. N.b. delete pre-defined models before creating new ones.
+    i. Create models for `User`, `Profile`, `Post`, and `Tag`. N.b. delete pre-defined models before creating new ones.
     ```
     php artisan make:model User
     php artisan make:model Profile
@@ -104,7 +103,23 @@ php artisan migrate:fresh --seed
 
     And for the M:M relationship, the pivot table name should be in singular form, joined by underscore. E.g. `post_tag` for `Post` and `Tag` models.
 
-    iii. Add necessary 1:1 `hasOne() : belongsTo()`, 1:M `hasMany() : belongsTo()`, M:M `belongsToMany() : belongsToMany()` functions in the models to link the relations.
+    ii. Add necessary 1:1 `hasOne() : belongsTo()`, 1:M `hasMany() : belongsTo()`, M:M `belongsToMany() : belongsToMany()` functions in the models to link the relations.
+
+    #### Task 1
+    a. In the controller `ORMExerciseController`, the CRUD operation was demonstrated using Eloquent ORM for the table `users`. Associated routes are,
+    - GET `/orm/user/` : To read all the users.
+    - GET `/orm/user/create` : To create a new user.
+    - GET `/orm/user/update/{id}` : To update a user with id.
+    - GET `/orm/user/delete/{id}` : To delete a user with id.
+
+    #### Task 2
+    b. In the controller `PostControllerORM`, the CRUD operation was demonstrated using Eloquent ORM for the table `posts`. Associated routes are,
+    - GET `/orm/post/{userId}/` : To read all the posts of the user with id (userId).
+    - GET `/orm/post/{userId}/create` : To create a new post for the user with id (userId).
+    - POST `/orm/post/{userId}/create` : To create a new post for the user with id (userId).
+    - GET `/orm/post/{userId}/update/{postId}` : To update a post with id (postId) for the user with id (userId).
+    - POST `/orm/post/{userId}/update/{postId}` : To update a post with id (postId) for the user with id (userId).
+    - GET `/orm/post/{userId}/delete/{postId}` : To delete a post with id (postId) for the user with id (userId).
 
 
 ## Quickstart the project
@@ -126,7 +141,21 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-5. Start the web server
+5. Configure your database connection in `.env` file. Add your preferred database name in `DB_DATABASE` variable.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=social_app_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+6. Start XAMPP Control Panel and start the MySQL server.
+7. Run the migration with seeders
+```
+php artisan migrate --seed
+```
+8. Start the web server
 ```
 php artisan serve
 ```
