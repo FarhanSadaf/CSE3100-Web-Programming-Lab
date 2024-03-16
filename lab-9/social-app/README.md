@@ -132,6 +132,7 @@ php artisan serve
 ```
 
 ## References
-1. https://laravel.com/docs/10.x/eloquent
-2. https://laravel.com/docs/10.x/migrations
-3. https://laravel.com/docs/10.x/seeding
+1. https://laravel.com/docs/11.x/queries
+2. https://laravel.com/docs/11.x/eloquent
+3. https://laravel.com/docs/11.x/migrations
+4. https://laravel.com/docs/11.x/seeding
