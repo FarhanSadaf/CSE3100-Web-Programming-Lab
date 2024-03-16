@@ -101,7 +101,7 @@ iv. Cultivate proficiency in database management and design principles, includin
     <td>How Eloquent ORM Works<br>Model Naming Conventions<br>Insert, Update, Delete, Fillable Properties<br>Select Clause, Where Clause</td>
   </tr>
   <tr>
-    <td rowspan="2">10</td>
+    <td rowspan="3">10</td>
     <td>Laravel Request-Response Model, REST API</td>
     <td>Introduction to REST API<br>Request-Response with Postman<br>Different Types of Request-Response (Simple Request, Request with Parameter, Request with Header and Body, Form Data, File Upload, Redirect Response, etc.)</td>
   </tr>
@@ -110,16 +110,15 @@ iv. Cultivate proficiency in database management and design principles, includin
     <td>Using Middleware (Request Verification, Rate Limiting, etc.)<br>Ajax/ Fetch API with Examples	</td>
   </tr>
   <tr>
-    <td>11</td>
     <td>Query Builder and Eloquent ORM Advanced </td>
     <td>Aggregation, Join Clauses <br>Advanced Queries </td>
   </tr>
   <tr>
-    <td>12</td>
+    <td>11</td>
     <td colspan="2">Final Project Showcase</td>
   </tr>
   <tr>
-    <td>13</td>
+    <td>12</td>
     <td colspan="2">Lab Quiz</td>
   </tr>
 </tbody>
