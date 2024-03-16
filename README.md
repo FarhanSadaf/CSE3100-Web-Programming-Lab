@@ -94,24 +94,20 @@ iv. Cultivate proficiency in database management and design principles, includin
   </tr>
   <tr>
     <td>Query Builder</td>
-    <td>Retrieving Single Rows, All Rows<br>Select, Where Clauses</td>
+    <td>Retrieving Single Rows, All Rows<br>Select, Where Clauses<br>Aggregation, Join Clauses <br></td>
   </tr>
   <tr>
     <td>Eloquent ORM Essentials: Models, Operations</td>
-    <td>How Eloquent ORM Works<br>Model Naming Conventions<br>Insert, Update, Delete, Fillable Properties<br>Select Clause, Where Clause</td>
+    <td>How Eloquent ORM Works<br>Model Naming Conventions<br>Fillable Properties<br>Insert, Update, Delete, Select Clause, Where Clause</td>
   </tr>
   <tr>
-    <td rowspan="3">10</td>
+    <td rowspan="2">10</td>
     <td>Laravel Request-Response Model, REST API</td>
     <td>Introduction to REST API<br>Request-Response with Postman<br>Different Types of Request-Response (Simple Request, Request with Parameter, Request with Header and Body, Form Data, File Upload, Redirect Response, etc.)</td>
   </tr>
   <tr>
     <td>Advanced Middleware, API Application</td>
     <td>Using Middleware (Request Verification, Rate Limiting, etc.)<br>Ajax/ Fetch API with Examples	</td>
-  </tr>
-  <tr>
-    <td>Query Builder and Eloquent ORM Advanced </td>
-    <td>Aggregation, Join Clauses <br>Advanced Queries </td>
   </tr>
   <tr>
     <td>11</td>
