@@ -172,4 +172,4 @@ php artisan serve
 3. User can create new tags, update or delete previous tags (on `tags` table).
 4. User can create a new post, update or delete old posts (on `posts` table), and posts will be ordered by the created_at column.
 
-    [N.b. you can use [session](https://laravel.com/docs/11.x/session) to store the current user_id while navigating through different routes. Make sure to delete the session when user decides to logout.] 
+    [N.b. you can use [session](https://laravel.com/docs/11.x/session) to store the current user_id while navigating through different routes. Make sure to delete the session when the user decides to log out.] 
