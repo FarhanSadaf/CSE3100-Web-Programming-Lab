@@ -165,3 +165,11 @@ php artisan serve
 2. https://laravel.com/docs/11.x/eloquent
 3. https://laravel.com/docs/11.x/migrations
 4. https://laravel.com/docs/11.x/seeding
+
+## Tasks
+1. Implement an authentication system, where a user can register (create an instance on `users` and `profiles` table, [hash](https://laravel.com/docs/11.x/hashing) the password before saving it to the database) and login to the app using email and password.
+2. After login, user can update their profile bio (on `profiles` table).
+3. User can create new tags, update or delete previous tags (on `tags` table).
+4. User can create a new post, update or delete old posts (on `posts` table), and posts will be ordered by the created_at column.
+
+    [N.b. you can use [session](https://laravel.com/docs/11.x/session) to store the current user_id while navigating through different routes. Make sure to delete the session when user decides to logout.] 
