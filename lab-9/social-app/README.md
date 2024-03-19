@@ -30,7 +30,9 @@ php artisan make:migration create_tags_table
 php artisan make:migration create_post_tag_table
 ```
 Then, add respective columns.
-5. Run `php artisan make:session-table` command, to avoid any unexpected errors.
+
+5. If you deleted the previous migration files in *step 1*, then run `php artisan make:session-table` command to avoid any unexpected errors.
+
 6. Run the migration using the following command
 ```
 php artisan migrate
@@ -76,7 +78,7 @@ php artisan migrate:fresh --seed
     php artisan make:model Post
     php artisan make:model Tag
     ```
-    Remember that, model names must be singular and table names should be in plural. For example,
+    Remember that, **model names** must be *singular, and PascalCase*; **table names** should be in *plural, and snake_case*. For example,
     <table>
     <tr>
     <th> Table name </th>
