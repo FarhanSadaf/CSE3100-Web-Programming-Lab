@@ -12,8 +12,7 @@
 ## Building from the scratch
 1. Create a new project, open project in any code editor. Delete previous migration files.
 2. We will use MySQL for database connection in this project. Hence, open XAMPP control panel and start the MySQL server. 
-3. Run `php artisan make:session-table` command, to avoid any unexpected errors.
-4. Configure your database connection in `.env` file. Add your preferred database name in `DB_DATABASE` variable.
+3. Configure your database connection in `.env` file. Add your preferred database name in `DB_DATABASE` variable.
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -22,7 +21,7 @@ DB_DATABASE=social_app_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-5. Now make migration files for `users`, `profiles`, `posts`, `tags`, and `post_tag` table. 
+4. Now make migration files for `users`, `profiles`, `posts`, `tags`, and `post_tag` table. 
 ```
 php artisan make:migration create_users_table
 php artisan make:migration create_profiles_table
@@ -31,7 +30,7 @@ php artisan make:migration create_tags_table
 php artisan make:migration create_post_tag_table
 ```
 Then, add respective columns.
-
+5. Run `php artisan make:session-table` command, to avoid any unexpected errors.
 6. Run the migration using the following command
 ```
 php artisan migrate
@@ -41,7 +40,7 @@ Or if you want to fresh the database (drop all the tables then run migration aga
 php artisan migrate:fresh
 ```
 7. You can find the database in PHPMyAdmin panel (`social_app_db` in this case). 
-8. You can add some dummy data from the sql file provided in `public/insert_queries`. Or you can run the seeder, in which we have inserted some dummy data using Query Builder in `database/seeders/DatabaseSeeder.php` file.
+8. You can add some dummy data from the sql file provided in `public/insert_queries.sql`. Or you can run the seeder, in which we have inserted some dummy data using Query Builder in `database/seeders/DatabaseSeeder.php` file.
 To run the seeder,
 ```
 php artisan migrate --seed
