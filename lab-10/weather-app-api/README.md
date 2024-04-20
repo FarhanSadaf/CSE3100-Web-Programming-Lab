@@ -30,7 +30,7 @@ In this lab, we will create basic a weather SPA (Single Page Application) using 
 
 5. Add your API key to `.env` file. E.g.
 
-    `OPENWEATHER_API_KEY="fdcc5af3e2fdb3774b4cf41008dffc6"`
+    `OPENWEATHER_API_KEY="fdcc5af3e2fdb37742b4cf41008dffc6"`
 
 6. Getting the coordinates
     1) Create a new controller by writing this command, `php artisan make:controller PositionController`.
