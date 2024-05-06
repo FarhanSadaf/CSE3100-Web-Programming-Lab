@@ -5,4 +5,4 @@ In this lab work, we will learn about common requests and responses used in Lara
 
 # Useful Links
 1. https://www.postman.com/downloads/
-2. https://github.com/public-apis/public-apis?tab=readme-ov-file#books
+2. https://github.com/public-apis/public-apis
